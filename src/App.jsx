@@ -5,6 +5,12 @@ function App() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // =========================
+  // ASSET PATH
+  // =========================
+  const asset = (filename) =>
+    `${import.meta.env.BASE_URL}assets/${filename}`;
+
+  // =========================
   // OPEN PROJECT
   // =========================
   const openProject = (project) => {
@@ -43,14 +49,6 @@ function App() {
   };
 
   // =========================
-  // GET FILE NAME
-  // =========================
-  const getFileName = (path) => {
-    if (!path) return "";
-    return path.split("/").pop();
-  };
-
-  // =========================
   // SKILLS
   // =========================
   const skills = [
@@ -66,7 +64,6 @@ function App() {
         "Postman",
       ],
     },
-
     {
       title: "Web Development",
       items: [
@@ -79,7 +76,6 @@ function App() {
         "MySQL",
       ],
     },
-
     {
       title: "Hardware",
       items: [
@@ -91,7 +87,6 @@ function App() {
         "Printer Installation",
       ],
     },
-
     {
       title: "IT Support",
       items: [
@@ -124,7 +119,6 @@ function App() {
         "Supported daily store operations and maintained effective communication with customers.",
       ],
     },
-
     {
       role: "Quality Assurance",
       company: "NAT Indonesia",
@@ -140,7 +134,6 @@ function App() {
         "Successfully completed 145 test cases on the LP360 application with zero test failures, identifying 3 critical bugs.",
       ],
     },
-
     {
       role: "Quality Assurance",
       company: "InKanteen",
@@ -156,7 +149,6 @@ function App() {
         "Collaborated with internal teams to support continuous improvement initiatives across merchant operations.",
       ],
     },
-
     {
       role: "Full Stack Developer",
       company: "Phiraka Sinergi Indonesia",
@@ -183,48 +175,40 @@ function App() {
       desc: "A canteen management and food ordering system developed as a web and mobile application.",
       tech: "Laravel • Flutter • MySQL",
       images: [
-        "/assets/Login-Starbhak.jpeg",
-        "/assets/Starbhak-Kanteen-Web.jpeg",
-        "/assets/Dashboard-Starbhak-Kanteen.jpeg",
+        asset("Login-Starbhak.jpeg"),
+        asset("Starbhak-Kanteen-Web.jpeg"),
+        asset("Dashboard-Starbhak-Kanteen.jpeg"),
       ],
     },
-
     {
       title: "O-PAY",
       desc: "A digital payment application developed using Laravel with a MySQL database.",
       tech: "Laravel • PHP • MySQL",
       images: [
-        "/assets/Splash-Screen-O-PAY.jpeg",
-        "/assets/Login-Page-OPAY.jpeg",
-        "/assets/O-PAY-SIGN-UP.jpeg",
-        "/assets/Success-CreateAcount.jpeg",
+        asset("Splash-Screen-O-PAY.jpeg"),
+        asset("Login-Page-OPAY.jpeg"),
+        asset("O-PAY-SIGN-UP.jpeg"),
+        asset("Success-CreateAcount.jpeg"),
       ],
     },
-
     {
       title: "MitraCare",
       desc: "A hospital-related web application developed to support information and operational processes.",
       tech: "Laravel • Bootstrap • MySQL",
       images: [
-        "/assets/MitraCare2.jpeg",
-        "/assets/MitraCare1.jpeg",
-        "/assets/MitraCare.jpeg",
-
+        asset("MitraCare2.jpeg"),
+        asset("MitraCare1.jpeg"),
+        asset("MitraCare.jpeg"),
       ],
-    },
-
-    {
-      title: "Dashboard Konseling",
-      desc: "A web-based counseling dashboard designed to manage counseling-related information.",
-      tech: "PHP • HTML • CSS • MySQL",
-      images: ["/assets/dashboard-konseling.png"],
     },
   ];
 
   return (
     <main className="bg-white text-gray-900">
 
-      {/* ===================== HERO ===================== */}
+      {/* =====================
+          HERO
+      ===================== */}
       <section className="min-h-screen flex items-center px-6 lg:px-20">
         <div className="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
 
@@ -249,7 +233,6 @@ function App() {
             </p>
 
             <div className="flex flex-wrap gap-4 mt-8">
-
               <a
                 href="#projects"
                 className="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition"
@@ -258,34 +241,31 @@ function App() {
               </a>
 
               <a
-                href="/CV-Naoval-Fadilah.pdf"
+                href={`${import.meta.env.BASE_URL}CV-Naoval-Fadilah.pdf`}
                 download
                 className="px-6 py-3 border border-black rounded-full hover:bg-black hover:text-white transition"
               >
                 Download CV
               </a>
-
             </div>
           </div>
-
 
           <div className="flex justify-center">
             <div className="w-full max-w-md aspect-square">
               <img
-                src="/assets/profile-remove-bg-io.png"
+                src={asset("profile-remove-bg-io.png")}
                 alt="Naoval Fadilah"
                 className="w-full h-full object-contain"
               />
             </div>
           </div>
 
-
-
-
         </div>
       </section>
 
-      {/* ===================== ABOUT ===================== */}
+      {/* =====================
+          ABOUT
+      ===================== */}
       <section
         id="about"
         className="px-6 lg:px-20 py-24 border-t border-gray-200"
@@ -303,7 +283,6 @@ function App() {
           </div>
 
           <div className="lg:col-span-2 text-gray-600 text-lg leading-relaxed space-y-4">
-
             <p>
               I'm Naoval, a Quality Assurance and IT professional
               with a strong interest in making software reliable
@@ -322,12 +301,14 @@ function App() {
               systems, maintain laptops, and provide IT technical
               support.
             </p>
-
           </div>
+
         </div>
       </section>
 
-      {/* ===================== SKILLS ===================== */}
+      {/* =====================
+          SKILLS
+      ===================== */}
       <section
         id="skills"
         className="px-6 lg:px-20 py-24 bg-gray-50"
@@ -374,8 +355,9 @@ function App() {
         </div>
       </section>
 
-      ```jsx
-      {/* ===================== EXPERIENCE ===================== */}
+      {/* =====================
+          EXPERIENCE
+      ===================== */}
       <section
         id="experience"
         className="px-6 lg:px-20 py-24 border-t border-gray-200"
@@ -415,7 +397,6 @@ function App() {
 
                 {/* SKILLS */}
                 <div className="grid grid-cols-[70px_1fr] gap-6 mb-5">
-
                   <p className="text-sm text-gray-400 uppercase tracking-wider">
                     Skills
                   </p>
@@ -423,37 +404,33 @@ function App() {
                   <p className="text-gray-600 leading-relaxed">
                     {job.skills}
                   </p>
-
                 </div>
 
                 {/* TASK */}
                 <div className="grid grid-cols-[70px_1fr] gap-6">
-
                   <p className="text-sm text-gray-400 uppercase tracking-wider">
                     Task
                   </p>
 
                   <ul className="space-y-2 text-gray-600 leading-relaxed">
-
                     {job.responsibilities.map((item, index) => (
                       <li key={index}>
                         {item}
                       </li>
                     ))}
-
                   </ul>
-
                 </div>
 
               </div>
             ))}
 
           </div>
-
         </div>
       </section>
 
-      {/* ===================== PROJECTS ===================== */}
+      {/* =====================
+          PROJECTS
+      ===================== */}
       <section
         id="projects"
         className="px-6 lg:px-20 py-24 bg-gray-50"
@@ -488,13 +465,19 @@ function App() {
                   {project.desc}
                 </p>
 
-                <button
-                  type="button"
-                  onClick={() => openProject(project)}
-                  className="mt-6 text-sm font-medium underline hover:no-underline cursor-pointer"
-                >
-                  View Project →
-                </button>
+                {project.images.length > 0 ? (
+                  <button
+                    type="button"
+                    onClick={() => openProject(project)}
+                    className="mt-6 text-sm font-medium underline hover:no-underline cursor-pointer"
+                  >
+                    View Project →
+                  </button>
+                ) : (
+                  <p className="mt-6 text-sm text-gray-400">
+                    Project preview unavailable
+                  </p>
+                )}
 
               </div>
             ))}
@@ -503,7 +486,9 @@ function App() {
         </div>
       </section>
 
-      {/* ===================== PROJECT MODAL ===================== */}
+      {/* =====================
+          PROJECT MODAL
+      ===================== */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 bg-neutral-900 flex flex-col">
 
@@ -533,8 +518,7 @@ function App() {
             {selectedProject.images?.length > 0 && (
               <img
                 src={selectedProject.images[currentImageIndex]}
-                alt={`${selectedProject.title} ${currentImageIndex + 1
-                  } `}
+                alt={`${selectedProject.title} ${currentImageIndex + 1}`}
                 className="max-h-[75vh] max-w-full object-contain rounded-lg select-none"
               />
             )}
@@ -553,6 +537,9 @@ function App() {
                 ‹ Previous
               </button>
 
+              <span className="text-white/50">
+                {currentImageIndex + 1} / {selectedProject.images.length}
+              </span>
 
               <button
                 type="button"
@@ -568,7 +555,9 @@ function App() {
         </div>
       )}
 
-      {/* ===================== CONTACT ===================== */}
+      {/* =====================
+          CONTACT
+      ===================== */}
       <section
         id="contact"
         className="px-6 lg:px-20 py-24 border-t border-gray-200"
@@ -591,6 +580,7 @@ function App() {
 
           <div className="flex flex-wrap justify-center gap-4">
 
+            {/* WHATSAPP */}
             <a
               href="https://wa.me/62881026858439"
               target="_blank"
@@ -600,8 +590,9 @@ function App() {
               WhatsApp
             </a>
 
+            {/* LINKEDIN */}
             <a
-              href="https://www.linkedin.com/in/naoval-fadilah-1540a1285/"
+              href="https://www.linkedin.com/in/naoval-fadilah-1540a128/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 border border-black rounded-full hover:bg-black hover:text-white transition"
@@ -609,8 +600,9 @@ function App() {
               LinkedIn
             </a>
 
+            {/* GITHUB */}
             <a
-              href="https://github.com/Naoval"
+              href="https://github.com/NaovalFadilah"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 border border-black rounded-full hover:bg-black hover:text-white transition"
@@ -622,9 +614,10 @@ function App() {
         </div>
       </section>
 
-      {/* ===================== FOOTER ===================== */}
+      {/* =====================
+          FOOTER
+      ===================== */}
       <footer className="px-6 lg:px-20 py-8 border-t border-gray-200">
-
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
 
           <p>
@@ -644,7 +637,7 @@ function App() {
             </a>
 
             <a
-              href="https://github.com/Naoval"
+              href="https://github.com/NaovalFadilah"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-black transition"
@@ -661,7 +654,6 @@ function App() {
 
           </div>
         </div>
-
       </footer>
 
     </main>
@@ -669,4 +661,3 @@ function App() {
 }
 
 export default App;
-``
