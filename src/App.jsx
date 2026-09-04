@@ -241,7 +241,7 @@ function App() {
               </a>
 
               <a
-                href={`${import.meta.env.BASE_URL}CV-Naoval-Fadilah.pdf`}
+                href={`${import.meta.env.BASE_URL}assets/CV-Naoval-Fadilah.pdf`}
                 download
                 className="px-6 py-3 border border-black rounded-full hover:bg-black hover:text-white transition"
               >
